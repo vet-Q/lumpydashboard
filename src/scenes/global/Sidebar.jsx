@@ -107,10 +107,10 @@ const Sidebar = () => {
                                     fontWeight="bold"
                                     sx={{ m: "10px 0 0 0" }}
                                 >
-                                    OhKyu Kwon
+                                    DVM_Q
                                 </Typography>
                                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                                    D.V.M., Developer
+                                  Jr.Developer, researcher
                                 </Typography>
                             </Box>
                         </Box>
