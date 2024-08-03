@@ -9,10 +9,10 @@ import Team from "./scenes/team";
 import Contacts from "./scenes/contacts";
 import Bar from "./scenes/bar";
 import Form from "./scenes/form";
-// import Pie from "./scenes/global/pie";
+import Bump from "./scenes/bump";
 // import FAQ from "./scenes/global/faq";
-// import Line from "./scenes/global/line";
-// import Geography from "./scenes/global/geography";
+import Line from "./scenes/line";
+import Geography from "./scenes/geography";
 // import Calender from "./scenes/global/calender";
 
 
@@ -32,10 +32,10 @@ function App() {
                       <Route path="/contacts" element={<Contacts/ >} />
                       <Route path="/form" element={<Form/ >} />
                       <Route path="/bar" element={<Bar/>} />
-                      {/*<Route path="/pie" element={<Pie />} />*/}
-                      {/*<Route path="/line" element={<Line />} />*/}
+                      <Route path="/bump" element={<Bump />} />
+                      <Route path="/line" element={<Line />} />
                       {/*<Route path="/faq" element={<FAQ/>} />*/}
-                      {/*<Route path="/geography" element={<Geography /> }/>*/}
+                      <Route path="/geography" element={<Geography /> }/>
                       {/*<Route path="/calender" element={<Calender />} />*/}
                   </Routes>
               </main>
