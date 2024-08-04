@@ -2,6 +2,7 @@
 # Lumpy Skin Disease Dashboard
 ![](./public/그림1.png)
 <LSD outbreak situation (2023. 08)>
+
 ![](./public/african swine fever1.png)
 <ASF outbreak situation(Wild boar, 2023.8)>
 
