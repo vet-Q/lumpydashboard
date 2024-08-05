@@ -14,7 +14,9 @@ import Bump from "./scenes/bump";
 import Line from "./scenes/line";
 import Geography from "./scenes/geography";
 import Profile from "./scenes/profile";
-
+import RssDataGrid from "./scenes/rss";
+import Research from "./scenes/research";
+import NewsTable from "./scenes/news";
 
 function App() {
   const [ theme, colorMode ] = useMode();
@@ -37,7 +39,12 @@ function App() {
                       {/*<Route path="/faq" element={<FAQ/>} />*/}
                       <Route path="/geography" element={<Geography /> }/>
                       <Route path="/profile" element={<Profile />} />
+                      {/*<Route path="/news" element={<News />} />*/}
+                      <Route path="/rss" element={<RssDataGrid />} />
+                      <Route path="/research" element={<Research />} />
+                      <Route path="/news" element={<NewsTable />} />
                   </Routes>
+
               </main>
             </div>
         </ThemeProvider>

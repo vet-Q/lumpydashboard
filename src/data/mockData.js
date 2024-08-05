@@ -1,5 +1,51 @@
 import { tokens } from "../theme";
 
+
+export const mockDataResearch = [
+    {
+        id: 1,
+        name: "World Organization for Animal Health(WOAH, international)",
+        link: "https://www.woah.org/en/home/",
+    },
+    {
+        id: 2,
+        name: "Ministry of Agriculture, Forestry and Fisheries(MAFF, JAPAN)",
+        link:"https://www.maff.go.jp/"
+    },
+    {
+        id: 3,
+        name: "Department for Environment Food & Rural Affairs (DEFRA, UK)",
+        link:"https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs"
+    },
+    {
+        id: 4,
+        name: "The European Food Safety Authority (EFSA, EU)",
+        link:"https://www.efsa.europa.eu/en"
+    },
+    {
+        id: 5,
+        name:"Animal and Plant Health Inspection Service (APHIS, USDA, US)",
+        link:"https://www.aphis.usda.gov/livestock-poultry-disease/cattle"
+    },
+    {
+        id: 6,
+        name: "Food and Agriculture Organization (FAO, international)",
+        link:"https://www.fao.org/europe/events/detail/Lumpy-skin-disease-preparedness/en"
+    },
+    {
+        id: 7,
+        name: "Pirbright institute (UK)",
+        link:"https://www.pirbright.ac.uk/lumpyskin"
+    },
+    {
+        id: 8,
+        name: "Department of Agriculture, Fisheries and Forestry (DAFF, AU)  ",
+        link:"https://www.pirbright.ac.uk/lumpyskin"
+    },
+
+
+];
+
 export const mockDataTeam = [
     {
         id: 1,
