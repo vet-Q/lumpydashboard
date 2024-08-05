@@ -3,7 +3,7 @@
 ![](./public/그림1.png)
 <LSD outbreak situation (2023. 08)>
 
-![](./public/african swine fever1.png)
+![]("./public/african swine fever1.png")
 <ASF outbreak situation(Wild boar, 2023.8)>
 
 This dashboard was created to share information about the recent surge in Lumpy Skin Disease cases in East Asia. 
