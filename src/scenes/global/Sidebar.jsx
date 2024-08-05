@@ -9,7 +9,7 @@ import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
+import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined';
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
@@ -91,26 +91,9 @@ const Sidebar = () => {
 
                     {!isCollapsed && (
                         <Box mb="25px">
-                            <Box display="flex" justifyContent="center" alignItems="center">
-                                <img
-                                    alt="profile-user"
-                                    width="100px"
-                                    height="100px"
-                                    src={`../../assets/user.png`}
-                                    style={{ cursor: "pointer", borderRadius: "50%" }}
-                                />
-                            </Box>
                             <Box textAlign="center">
-                                <Typography
-                                    variant="h3"
-                                    color={colors.grey[100]}
-                                    fontWeight="bold"
-                                    sx={{ m: "10px 0 0 0" }}
-                                >
-                                    DVM_Q
-                                </Typography>
                                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                                  Jr.Developer, researcher
+                                  Dashboard for Lumpy Skin Disease
                                 </Typography>
                             </Box>
                         </Box>
@@ -162,16 +145,16 @@ const Sidebar = () => {
                             Pages
                         </Typography>
                         <Item
-                            title="Profile Form"
-                            to="/form"
+                            title="WhoamI"
+                            to="/profile"
                             icon={<PersonOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
                         />
                         <Item
-                            title="Calendar"
-                            to="/calendar"
-                            icon={<CalendarTodayOutlinedIcon />}
+                            title="News"
+                            to="/news"
+                            icon={<NewspaperOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
                         />

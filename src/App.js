@@ -13,7 +13,7 @@ import Bump from "./scenes/bump";
 // import FAQ from "./scenes/global/faq";
 import Line from "./scenes/line";
 import Geography from "./scenes/geography";
-// import Calender from "./scenes/global/calender";
+import Profile from "./scenes/profile";
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
                       <Route path="/line" element={<Line />} />
                       {/*<Route path="/faq" element={<FAQ/>} />*/}
                       <Route path="/geography" element={<Geography /> }/>
-                      {/*<Route path="/calender" element={<Calender />} />*/}
+                      <Route path="/profile" element={<Profile />} />
                   </Routes>
               </main>
             </div>
