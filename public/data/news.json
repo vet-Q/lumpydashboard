@@ -1,0 +1,45 @@
+{
+  "status": "ok",
+  "totalResults": 3,
+  "articles": [
+    {
+      "source": {
+        "id": "the-times-of-india",
+        "name": "The Times of India"
+      },
+      "author": "Times News Network",
+      "title": "Vax works: No cases of lumpy skin disease in cattle noted yet this year",
+      "description": "Panaji: The Goa animal husbandry department has announced that no cases of lumpy skin disease in cattle have been reported for the current fiscal year.",
+      "url": "https://timesofindia.indiatimes.com/city/goa/vax-works-no-cases-of-lumpy-skin-disease-in-cattle-noted-yet-this-year/articleshow/112177088.cms",
+      "urlToImage": "https://static.toiimg.com/thumb/msid-47529300,width-1070,height-580,imgsize-110164,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+      "publishedAt": "2024-07-31T19:46:21Z",
+      "content": "7 days, 7 hill stations in South India to explore"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Business Standard"
+      },
+      "author": "Sanjeeb Mukherjee",
+      "title": "Centre says swine flu now rampaging Kerala pigs won't spread to humans",
+      "description": "The Union Animal Husbandry Department has formulated the National Action Plan for Control of ASF in 2020",
+      "url": "https://www.business-standard.com/health/centre-says-swine-flu-now-rampaging-kerala-pigs-won-t-spread-to-humans-124070700362_1.html",
+      "urlToImage": "https://bsmedia.business-standard.com/_media/bs/img/article/2022-07/27/thumb/fitandfill/400X400/1658884834-7764.jpg",
+      "publishedAt": "2024-07-07T12:08:53Z",
+      "content": "The Union Animal Husbandry Department has formulated the National Action Plan for Control of ASF in 2020\r\nRepresentative Image\r\nSanjeeb MukherjeeNew Delhi\r\nThe government today said that the African … [+2605 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Business Standard"
+      },
+      "author": "Press Trust of India",
+      "title": "Govt culls 310 pigs to contain African Swine Fever outbreak in Kerala",
+      "description": "The Centre on Sunday said around 310 pigs have been culled in Kerala's Thrissur district after an outbreak of African Swine Fever (ASF).\nThe outbreak was detected in Madakkatharan Panchayath, prompting swift action from the state's Animal Husbandry Department…",
+      "url": "https://www.business-standard.com/india-news/govt-culls-310-pigs-to-contain-african-swine-fever-outbreak-in-kerala-124070700263_1.html",
+      "urlToImage": "https://bsmedia.business-standard.com/_media/bs/img/article/2020-12/16/thumb/featurecrop/400X400/1608081428-3992.jpg",
+      "publishedAt": "2024-07-07T10:39:36Z",
+      "content": "The outbreak was detected in Madakkatharan Panchayath, prompting swift action from the state's Animal Husbandry Department\r\nIndia's approach to zoonotic diseases is evolving. The government has launc… [+3125 chars]"
+    }
+  ]
+}
