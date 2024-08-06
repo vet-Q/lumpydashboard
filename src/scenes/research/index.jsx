@@ -1,7 +1,7 @@
 import {Box, Typography, useTheme} from "@mui/material";
 import {DataGrid} from "@mui/x-data-grid";
 import {tokens} from "../../theme";
-import Header from "../../components/header";
+import Topbar from "../global/Topbar"
 import {mockDataResearch} from "../../data/mockData";
 
 const Research = () => {
@@ -61,7 +61,7 @@ const Research = () => {
 
     return (
         <Box m="20px">
-            <Header title="Research" subtitle="Research Organizations and Links"/>
+            <Topbar title="Research" subtitle="Research Organizations and Links"/>
             <Box
                 m="40px 0 0 0"
                 height="75vh"

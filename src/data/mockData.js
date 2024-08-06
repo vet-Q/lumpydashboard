@@ -482,7 +482,7 @@ export const mockLineData = [
         color: tokens("dark").greenAccent[500],
         data: [
             {
-                x: "plane",
+                x: "2023.1",
                 y: 101,
             },
             {
@@ -536,7 +536,7 @@ export const mockLineData = [
         color: tokens("dark").blueAccent[300],
         data: [
             {
-                x: "plane",
+                x: "2023.1",
                 y: 212,
             },
             {
@@ -590,7 +590,7 @@ export const mockLineData = [
         color: tokens("dark").redAccent[200],
         data: [
             {
-                x: "plane",
+                x: "2023.1",
                 y: 191,
             },
             {
