@@ -7,6 +7,7 @@ import LineChart from "../../components/Linechart";
 import StatBox from "../../components/StatBox";
 import BumpChart from "../../components/Bumpchart";
 import GeographyChart from "../../components/Geographychart";
+import BarChart from "../../components/Barchart"; // Import BarChart component
 import { downloadImage } from '../../utils/downloadImage';  // 경로를 실제 파일 위치에 맞게 수정하세요
 import Topbar from "../global/Topbar";
 
@@ -17,21 +18,21 @@ const Dashboard = () => {
     // Ref 생성 (Create refs)
     const statBoxRef1 = useRef(null);
     const statBoxRef2 = useRef(null);
-    const statBoxRef3 = useRef(null);
-    const statBoxRef4 = useRef(null);
     const lineChartRef = useRef(null);
     const bumpChartRef = useRef(null);
     const geographyChartRef = useRef(null);
+    const barChartRef = useRef(null); // Ref for BarChart
 
     return (
-            <Box m="20px">
-                <Topbar title="DASHBOARD" subtitle="Based on WAHIS and Google Scholar Data" />
+        <Box m="20px">
+            <Topbar title="DASHBOARD" subtitle="Based on WAHIS and Google Scholar Data" />
+
             {/* Row 1 */}
             <Box mb="20px">
                 <Box
                     display="grid"
                     gridTemplateColumns="repeat(12, 1fr)"
-                    gridAutoRows="140px"
+                    gridAutoRows="200px" // Increase the row height
                     gap="20px"
                 >
                     <Box
@@ -69,38 +70,35 @@ const Dashboard = () => {
                         />
                     </Box>
                     <Box
-                        ref={statBoxRef3}
-                        gridColumn="span 3"
+                        ref={barChartRef}
+                        gridColumn="span 6" // Adjust the span if needed
                         backgroundColor={colors.primary[400]}
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
                         position="relative"
                     >
-                        <StatBox
-                            title="12361"
-                            subtitle="Emails Sent"
-                            progress="0.75"
-                            increase="+14%"
-                            icon={<EmailIcon sx={{ color: colors.greenAccent[400], fontSize: "20px" }} />}
-                        />
-                    </Box>
-                    <Box
-                        ref={statBoxRef4}
-                        gridColumn="span 3"
-                        backgroundColor={colors.primary[400]}
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        position="relative"
-                    >
-                        <StatBox
-                            title="12361"
-                            subtitle="Emails Sent"
-                            progress="0.75"
-                            increase="+14%"
-                            icon={<EmailIcon sx={{ color: colors.greenAccent[400], fontSize: "20px" }} />}
-                        />
+                        <Box
+                            mt="5px"
+                            p="0 10px" // Adjust padding
+                            display="flex"
+                            justifyContent="space-between"
+                            alignItems="center"
+                        >
+                            <Box>
+                                <Typography variant="h3" fontWeight="600" color={colors.grey[200]}>
+                                    LSD Outbreaks by Continent
+                                </Typography>
+                            </Box>
+                            <Box>
+                                <IconButton>
+                                    <DownloadOutlineIcon
+                                        onClick={() => downloadImage(barChartRef, 'barChart.jpg')}
+                                        sx={{ fontSize: "26px", color: colors.grey[400] }}
+                                    />
+                                </IconButton>
+                            </Box>
+                        </Box>
+                        <Box height="180px" ml="-20px"> {/* Adjust the height to match StatBox */}
+                            <BarChart isDashboard={true} />
+                        </Box>
                     </Box>
                 </Box>
             </Box>
@@ -120,18 +118,15 @@ const Dashboard = () => {
                         position="relative"
                     >
                         <Box
-                            mt="25px"
+                            mt="15px"
                             p="0 30px"
                             display="flex"
                             justifyContent="space-between"
                             alignItems="center"
                         >
                             <Box>
-                                <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
-                                    Revenue Generated
-                                </Typography>
-                                <Typography variant="h3" fontWeight="500" color={colors.grey[500]}>
-                                    $59,342,32
+                                <Typography variant="h3" fontWeight="600" color={colors.grey[200]}>
+                                    LSD outbreak number per year
                                 </Typography>
                             </Box>
                             <Box>
@@ -155,18 +150,15 @@ const Dashboard = () => {
                         position="relative"
                     >
                         <Box
-                            mt="25px"
-                            p="0 30px"
+                            mt="15px"
+                            p="0 10px"
                             display="flex"
                             justifyContent="space-between"
                             alignItems="center"
                         >
                             <Box>
-                                <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
+                                <Typography variant="h3" fontWeight="600" color={colors.grey[200]}>
                                     Rank of LSD outbreak
-                                </Typography>
-                                <Typography variant="h3" fontWeight="500" color={colors.grey[500]}>
-                                    $59,342,32
                                 </Typography>
                             </Box>
                             <Box>
@@ -199,18 +191,15 @@ const Dashboard = () => {
                         position="relative"
                     >
                         <Box
-                            mt="25px"
+                            mt="15px"
                             p="0 30px"
                             display="flex"
                             justifyContent="space-between"
                             alignItems="center"
                         >
                             <Box>
-                                <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
+                                <Typography variant="h3" fontWeight="600" color={colors.grey[200]}>
                                     Revenue Generated
-                                </Typography>
-                                <Typography variant="h3" fontWeight="500" color={colors.grey[500]}>
-                                    $59,342,32
                                 </Typography>
                             </Box>
                             <Box>
@@ -235,18 +224,15 @@ const Dashboard = () => {
                         overflow="hidden" // 이 부분을 추가하여 지도가 삐져나오지 않도록 합니다.
                     >
                         <Box
-                            mt="25px"
+                            mt="15px"
                             p="0 30px"
                             display="flex"
                             justifyContent="space-between"
                             alignItems="center"
                         >
                             <Box>
-                                <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
-                                    Rank of LSD outbreak
-                                </Typography>
-                                <Typography variant="h3" fontWeight="500" color={colors.grey[500]}>
-                                    $59,342,32
+                                <Typography variant="h3" fontWeight="600" color={colors.grey[200]}>
+                                    LSD outbreak Choropleth
                                 </Typography>
                             </Box>
                             <Box>

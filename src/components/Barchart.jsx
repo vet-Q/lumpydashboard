@@ -3,7 +3,7 @@ import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../theme";
 import { preparedData as data } from "../data/preparedData";
 
-const BarChart = ({ isDashboard = false }) => {
+const Barchart = ({ isDashboard = false }) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
@@ -55,12 +55,12 @@ const BarChart = ({ isDashboard = false }) => {
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: isDashboard ? undefined : "Year",
+                legend: "Year",
                 legendPosition: "middle",
                 legendOffset: 32,
             }}
-            axisLeft={{
-                tickSize: 5,
+            axisLeft={isDashboard ? null : {
+                tickSize: 2,
                 tickPadding: 5,
                 tickRotation: 0,
                 legend: isDashboard ? undefined : "Cases",
@@ -106,4 +106,4 @@ const BarChart = ({ isDashboard = false }) => {
     );
 };
 
-export default BarChart;
+export default Barchart;

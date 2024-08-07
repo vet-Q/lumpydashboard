@@ -18,6 +18,7 @@ import Research from "./scenes/research";
 import NewsTable from "./scenes/news";
 import FAQ from "./scenes/faq";
 
+
 function App() {
   const [ theme, colorMode ] = useMode();
   return (

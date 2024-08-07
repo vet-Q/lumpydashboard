@@ -1,8 +1,7 @@
 import { ResponsiveBump } from '@nivo/bump'
 import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
-import { Bumpdata as data } from "../data/mockData";
-
+import { preparedData as data } from "../data/preparedData";
 
 const BumpChart = () =>{
     const theme = useTheme();
@@ -10,7 +9,7 @@ const BumpChart = () =>{
 
     return (
         <ResponsiveBump
-            data={data}
+            data={data.bumpChartData}
             theme={{
                 axis:{
                     domain:{
@@ -39,33 +38,24 @@ const BumpChart = () =>{
                     }
                 }
             }
-
             }
             colors={{ scheme: 'spectral' }}
-            lineWidth={3}
+            lineWidth={2}
             activeLineWidth={6}
             inactiveLineWidth={3}
             inactiveOpacity={0.15}
-            pointSize={10}
+            pointSize={4}
             activePointSize={16}
             inactivePointSize={0}
             pointColor={{ theme: 'background' }}
-            pointBorderWidth={3}
-            activePointBorderWidth={3}
+            pointBorderWidth={2}
+            activePointBorderWidth={2}
             pointBorderColor={{ from: 'serie.color' }}
-            axisTop={{
-                tickSize: 5,
-                tickPadding: 5,
-                tickRotation: 0,
-                legend: '',
-                legendPosition: 'middle',
-                legendOffset: -36,
-                truncateTickAt: 0
-            }}
+            axisTop={null} // 위쪽 축 라벨을 없앱니다.
             axisBottom={{
                 tickSize: 5,
                 tickPadding: 5,
-                tickRotation: 0,
+                tickRotation: 60,
                 legend: '',
                 legendPosition: 'middle',
                 legendOffset: 32,

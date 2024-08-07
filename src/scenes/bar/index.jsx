@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import BarChart from "../../components/Barchart";
+import Barchart from "../../components/Barchart";
 import Topbar from "../global/Topbar"
 
 const Bar = () =>{
@@ -7,7 +7,7 @@ const Bar = () =>{
         <Box m="20px">
             <Topbar title="Bar chart" subtitle="simple box"/>
             <Box height="75vh">
-                <BarChart/>
+                <Barchart/>
             </Box>
         </Box>
     )

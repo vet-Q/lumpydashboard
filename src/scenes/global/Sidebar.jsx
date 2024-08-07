@@ -113,7 +113,7 @@ const Sidebar = () => {
                             color={colors.grey[300]}
                             sx={{ m: "15px 0 5px 20px" }}
                         >
-                            Data
+                            Related resources
                         </Typography>
                         <Item
                             title="Research Institute"
@@ -129,28 +129,15 @@ const Sidebar = () => {
                             selected={selected}
                             setSelected={setSelected}
                         />
-                        <Item
-                            title="Phylogenetic tree"
-                            to="/invoices"
-                            icon={<ComputerOutlinedIcon />}
-                            selected={selected}
-                            setSelected={setSelected}
-                        />
 
                         <Typography
                             variant="h6"
                             color={colors.grey[300]}
                             sx={{ m: "15px 0 5px 20px" }}
                         >
-                            Pages
+                            News & Data
                         </Typography>
-                        <Item
-                            title="WhoamI"
-                            to="/profile"
-                            icon={<PersonOutlinedIcon />}
-                            selected={selected}
-                            setSelected={setSelected}
-                        />
+
                         <Item
                             title="News"
                             to="/news"
@@ -162,6 +149,13 @@ const Sidebar = () => {
                             title="FAQ Page"
                             to="/faq"
                             icon={<HelpOutlineOutlinedIcon />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Phylogenetic tree"
+                            to="/invoices"
+                            icon={<ComputerOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
                         />
@@ -198,6 +192,20 @@ const Sidebar = () => {
                             title="Geography Chart"
                             to="/geography"
                             icon={<MapOutlinedIcon />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Typography
+                            variant="h6"
+                            color={colors.grey[300]}
+                            sx={{ m: "15px 0 5px 20px" }}
+                        >
+                            etc
+                        </Typography>
+                        <Item
+                            title="WhoamI"
+                            to="/profile"
+                            icon={<PersonOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
                         />
