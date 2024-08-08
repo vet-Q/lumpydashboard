@@ -70,7 +70,12 @@ const ProfileChart = () => {
                         Likes: New programming languages, Korean novels, soju, and Hanwha Eagles (⚾!)
                     </Typography>
                     <Box mt="20px">
-                        <Typography id="modal-modal-subtitle" variant="h5" component="h2">
+                        <Typography id="modal-modal-subtitle" variant="h5" component="h2" color={colors.greenAccent[500]}>
+                            "There should be one-- and preferably only one --obvious way to do it (Zen of Python)"
+                        </Typography>
+                    </Box>
+                    <Box mt="20px">
+                        <Typography id="modal-modal-subtitle" variant="h5" component="h2" >
                             Kwonok5945@gmail.com
                         </Typography>
                     </Box>

@@ -1,16 +1,16 @@
 import { Box } from "@mui/material";
 import Topbar from "../global/Topbar"
-import Linechart from "../../components/Linechart";
+import FaqPage from "../../components/Faq";
 
-const Line = () =>{
+const FAQ = () =>{
     return (
         <Box m="20px">
-            <Topbar title="Line chart" subtitle="simple Line"/>
+            <Topbar title="FAQ" subtitle="All about LSD"/>
             <Box height="75vh">
-                <Linechart/>
+                <FaqPage/>
             </Box>
         </Box>
     )
 }
 
-export default Line;
+export default FAQ

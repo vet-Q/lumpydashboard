@@ -1,17 +1,33 @@
 import { useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../theme";
-import { mockBarData as data } from "../data/mockData";
+import { preparedData as data } from "../data/preparedData";
 
-const BarChart = ({ isDashboard = false }) => {
+const Barchart = ({ isDashboard = false }) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
+    const CustomTooltip = ({ id, value }) => (
+        <div
+            style={{
+                padding: '12px 16px',
+                background: colors.blueAccent[200],
+                color: colors.grey[700],
+                opacity: 1,
+                borderRadius: '2px',
+                boxShadow: '0 3px 6px rgba(0, 0, 0, 0.1)',
+            }}
+        >
+            <strong>{id}</strong>: {value}
+        </div>
+    );
+
+
     return (
         <ResponsiveBar
-            data={data}
+            data={data.barChartData}
+            tooltip={CustomTooltip} //커스텀 툴팁을 정의하고, 이걸 가져와서 여기서 보여주는 형태로 구성
             theme={{
-                // added
                 axis: {
                     domain: {
                         line: {
@@ -39,33 +55,13 @@ const BarChart = ({ isDashboard = false }) => {
                     },
                 },
             }}
-            keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
-            indexBy="country"
-            margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+            keys={["Africa", "Asia", "Europe"]}
+            indexBy="year"
+            margin={{ top: 10, right: 130, bottom: 50, left: 60 }}
             padding={0.3}
             valueScale={{ type: "linear" }}
             indexScale={{ type: "band", round: true }}
             colors={{ scheme: "nivo" }}
-            defs={[
-                {
-                    id: "dots",
-                    type: "patternDots",
-                    background: "inherit",
-                    color: "#38bcb2",
-                    size: 4,
-                    padding: 1,
-                    stagger: true,
-                },
-                {
-                    id: "lines",
-                    type: "patternLines",
-                    background: "inherit",
-                    color: "#eed312",
-                    rotation: -45,
-                    lineWidth: 6,
-                    spacing: 10,
-                },
-            ]}
             borderColor={{
                 from: "color",
                 modifiers: [["darker", "1.6"]],
@@ -76,15 +72,15 @@ const BarChart = ({ isDashboard = false }) => {
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: isDashboard ? undefined : "country", // changed
+                // legend: "Year",
                 legendPosition: "middle",
                 legendOffset: 32,
             }}
-            axisLeft={{
-                tickSize: 5,
+            axisLeft={isDashboard ? null : {
+                tickSize: 2,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: isDashboard ? undefined : "food", // changed
+                legend: isDashboard ? undefined : "Cases",
                 legendPosition: "middle",
                 legendOffset: -40,
             }}
@@ -109,22 +105,14 @@ const BarChart = ({ isDashboard = false }) => {
                     itemDirection: "left-to-right",
                     itemOpacity: 0.85,
                     symbolSize: 20,
-                    effects: [
-                        {
-                            on: "hover",
-                            style: {
-                                itemOpacity: 1,
-                            },
-                        },
-                    ],
                 },
             ]}
             role="application"
             barAriaLabel={function (e) {
-                return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;
+                return e.id + ": " + e.formattedValue + " in year: " + e.indexValue;
             }}
         />
     );
 };
 
-export default BarChart;
+export default Barchart;

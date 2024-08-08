@@ -1,7 +1,6 @@
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider} from "@mui/material";
 import { Routes, Route } from "react-router-dom";
-import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
 import Team from "./scenes/team";
@@ -17,6 +16,8 @@ import Profile from "./scenes/profile";
 import RssDataGrid from "./scenes/rss";
 import Research from "./scenes/research";
 import NewsTable from "./scenes/news";
+import FAQ from "./scenes/faq";
+
 
 function App() {
   const [ theme, colorMode ] = useMode();
@@ -27,7 +28,6 @@ function App() {
             <div className="app">
                 <Sidebar />
               <main className="content">
-                <Topbar/>
                   <Routes>
                       <Route path="/" element={<Dashboard/ >} />
                       <Route path="/team" element={<Team />} />
@@ -36,10 +36,9 @@ function App() {
                       <Route path="/bar" element={<Bar/>} />
                       <Route path="/bump" element={<Bump />} />
                       <Route path="/line" element={<Line />} />
-                      {/*<Route path="/faq" element={<FAQ/>} />*/}
+                      <Route path="/faq" element={<FAQ/>} />
                       <Route path="/geography" element={<Geography /> }/>
                       <Route path="/profile" element={<Profile />} />
-                      {/*<Route path="/news" element={<News />} />*/}
                       <Route path="/rss" element={<RssDataGrid />} />
                       <Route path="/research" element={<Research />} />
                       <Route path="/news" element={<NewsTable />} />

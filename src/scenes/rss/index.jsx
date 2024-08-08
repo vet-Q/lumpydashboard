@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Box, Typography, useTheme} from '@mui/material';
 import {DataGrid} from '@mui/x-data-grid';
 import { tokens } from "../../theme";
+import Topbar from "../global/Topbar"
 
 const RssDataGrid = () => {
     const theme = useTheme();
@@ -83,6 +84,7 @@ const RssDataGrid = () => {
 
     return (
         <Box m="20px">
+            <Topbar title="Analysis Report" subtitle="The data is parsed from DEFRA's RSS feed."/>
             <Box height="75vh">
                 <DataGrid
                     rows={rows}

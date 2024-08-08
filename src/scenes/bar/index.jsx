@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
-import Header from "../../components/header";
-import BarChart from "../../components/Barchart";
+import Barchart from "../../components/Barchart";
+import Topbar from "../global/Topbar"
 
 const Bar = () =>{
     return (
         <Box m="20px">
-            <Header title="Bar chart" subtitle="simple box"/>
+            <Topbar title="Bar chart" subtitle="simple box"/>
             <Box height="75vh">
-                <BarChart/>
+                <Barchart/>
             </Box>
         </Box>
     )

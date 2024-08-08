@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
-import Header from "../../components/header";
+import Topbar from "../global/Topbar"
 import { useTheme } from "@mui/material";
 
 const Contacts = () => {
@@ -54,7 +54,7 @@ const Contacts = () => {
 
     return (
         <Box m="20px">
-            <Header
+            <Topbar
                 title="CONTACTS"
                 subtitle="List of Contacts for Future Reference"
             />
