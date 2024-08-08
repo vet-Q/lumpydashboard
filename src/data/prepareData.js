@@ -34,12 +34,14 @@ const countryAbbreviations = {
     // 필요한 모든 국가 추가...
 };
 
-// Helper function to parse the year from a date string
 const parseYear = (dateString) => {
     return new Date(dateString).getFullYear();
 };
 
-// Helper function to get continent
+const parseDate = (dateString) => {
+    return new Date(dateString);
+};
+
 const getContinent = (country) => {
     const continentMapping = {
         "Africa": ["EGY", "AGO", "MOZ", "MUS", "MLI", "GIN", "NAM", "BDI", "DJI", "LBY"],
@@ -55,14 +57,68 @@ const getContinent = (country) => {
     return null;
 };
 
-// Function to prepare data for different Nivo charts
+const prepareSummaryData = (data) => {
+    // 국가의 집합을 저장하기 위한 Set
+    const countriesSet = new Set();
+    // 총 발생 건수를 저장할 변수
+    let totalOutbreaks = 0;
+    // 어제까지의 총 발생 건수를 저장할 변수
+    let totalOutbreaksYesterday = 0;
+    // 오늘까지의 총 발생 건수를 저장할 변수
+    let totalOutbreaksToday = 0;
+
+    // 오늘 날짜를 구하고, 시간을 자정으로 설정
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // 자정으로 설정하여 날짜 비교 용이
+
+    // 어제 날짜를 구하고, 시간을 자정으로 설정
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1); // 하루 전 날짜로 설정
+
+    // 데이터의 각 피처를 순회
+    data.features.forEach(feature => {
+        // 피처에서 국가 이름을 가져옴
+        const country = feature.properties.country;
+        // 피처에서 날짜를 파싱하여 Date 객체로 변환
+        const date = parseDate(feature.properties.date);
+
+        // 국가를 Set에 추가 (중복 방지)
+        countriesSet.add(country);
+        // 총 발생 건수를 증가
+        totalOutbreaks++;
+
+        // 날짜가 어제 자정 이전이면 어제까지의 총 발생 건수를 증가
+        if (date <= yesterday) {
+            totalOutbreaksYesterday++;
+        }
+        // 날짜가 오늘 자정 이전이면 오늘까지의 총 발생 건수를 증가
+        if (date <= today) {
+            totalOutbreaksToday++;
+        }
+    });
+
+    // 어제와 오늘의 총 발생 건수의 차이를 계산
+    const increaseFromYesterday = totalOutbreaksToday - totalOutbreaksYesterday;
+
+    // 요약 데이터를 반환
+    return {
+        countries: countriesSet.size, // 중복되지 않는 국가의 수
+        totalOutbreaks, // 총 발생 건수
+        increaseFromYesterday, // 어제와 오늘의 발생 건수 차이
+        totalOutbreaksYesterday, // 어제까지의 총 발생 건수
+        totalOutbreaksToday // 오늘까지의 총 발생 건수
+    };
+};
+
+
+
 const dataPreparation = (data) => {
     const countryCounts = {};
     const lineChartData = {};
     const bumpChartData = {};
     const barChartData = {};
+    const summaryData = prepareSummaryData(data);
 
-    // Step 1: Count occurrences for each country and initialize lineChartData structure
     if (data.features) {
         data.features.forEach(feature => {
             const country = feature.properties.country;
@@ -83,7 +139,6 @@ const dataPreparation = (data) => {
 
             lineChartData[country][year]++;
 
-            // Initialize barChartData structure
             const continent = getContinent(country);
             if (!barChartData[year]) {
                 barChartData[year] = { year: year, Africa: 0, Asia: 0, Europe: 0 };
@@ -94,12 +149,10 @@ const dataPreparation = (data) => {
         });
     }
 
-    // Step 2: Find the top 12 countries
     const topCountries = Object.keys(countryCounts)
         .sort((a, b) => countryCounts[b] - countryCounts[a])
         .slice(0, 12);
 
-    // Step 3: Get all years and fill missing years with 0
     const allYears = Array.from(new Set(data.features.map(f => parseYear(f.properties.date)))).sort();
 
     topCountries.forEach(country => {
@@ -110,7 +163,6 @@ const dataPreparation = (data) => {
         });
     });
 
-    // Transform data into Nivo Line chart format
     const lineChartDataTransformed = topCountries.map(country => ({
         id: country,
         data: allYears.map(year => ({
@@ -119,7 +171,6 @@ const dataPreparation = (data) => {
         }))
     }));
 
-    // Step 4: Prepare data for Bump chart
     const yearCountryCounts = {};
 
     allYears.forEach(year => {
@@ -155,13 +206,11 @@ const dataPreparation = (data) => {
         })
     }));
 
-    // Step 5: Prepare data for Choropleth chart
     const choroplethDataTransformed = topCountries.map(country => ({
         id: countryAbbreviations[country] || country,
         value: countryCounts[country] || 0
     }));
 
-    // Transform data into Nivo Bar chart format
     const barChartDataTransformed = Object.keys(barChartData).map(year => ({
         year: year,
         Africa: barChartData[year].Africa,
@@ -169,8 +218,8 @@ const dataPreparation = (data) => {
         Europe: barChartData[year].Europe
     }));
 
-    // Combine all data into one object
     return {
+        summaryData,
         lineChartData: lineChartDataTransformed,
         bumpChartData: bumpChartDataTransformed,
         choroplethData: choroplethDataTransformed,
@@ -178,42 +227,33 @@ const dataPreparation = (data) => {
     };
 };
 
-// Function to fetch data and save if there are new changes
 const fetchDataAndSave = async () => {
     try {
-        // Fetch the data from the provided URL
         const response = await fetch('https://animal-diseases.efsa.europa.eu/LSDV/data.js');
         const text = await response.text();
 
-        // Extract the JSON part from the response using regular expression
         const match = text.match(/data1\s*=\s*(\{[\s\S]*?\})\s*data1_semester/);
         if (!match) {
             throw new Error('Failed to extract JSON data from response');
         }
 
-        // Parse the extracted JSON string
         const jsonString = match[1];
         const data = JSON.parse(jsonString);
 
-        // Load previous data to compare changes
         let previousData = {};
         if (fs.existsSync('previousData.json')) {
             previousData = JSON.parse(fs.readFileSync('previousData.json', 'utf-8'));
         }
 
-        // Get the ID of the last feature in the current data
         const lastFeatureId = data.features[data.features.length - 1].id;
         const lastFeatureIdPrev = previousData.features ? previousData.features[previousData.features.length - 1].id : null;
 
-        // If the last ID has changed, process and save the new data
         if (lastFeatureId !== lastFeatureIdPrev) {
             const preparedData = dataPreparation(data);
 
-            // Save the prepared data for Nivo charts
             const dataString = `export const preparedData = ${JSON.stringify(preparedData, null, 2)};`;
             fs.writeFileSync('preparedData.js', dataString);
 
-            // Save the current data as the previous data for future comparison
             fs.writeFileSync('previousData.json', JSON.stringify(data, null, 2));
 
             console.log('Data has been saved to preparedData.js');
@@ -226,3 +266,7 @@ const fetchDataAndSave = async () => {
 };
 
 fetchDataAndSave();
+
+
+
+

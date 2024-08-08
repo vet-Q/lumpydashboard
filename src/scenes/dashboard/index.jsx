@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, IconButton, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { tokens } from "../../theme";
 import DownloadOutlineIcon from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
@@ -10,10 +10,15 @@ import GeographyChart from "../../components/Geographychart";
 import BarChart from "../../components/Barchart"; // Import BarChart component
 import { downloadImage } from '../../utils/downloadImage';  // 경로를 실제 파일 위치에 맞게 수정하세요
 import Topbar from "../global/Topbar";
+import { preparedData } from '../../data/preparedData'; // 데이터 가져오기
 
 const Dashboard = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+    // preparedData에서 summaryData를 추출
+    const { summaryData } = preparedData;
 
     // Ref 생성 (Create refs)
     const statBoxRef1 = useRef(null);
@@ -31,13 +36,13 @@ const Dashboard = () => {
             <Box mb="20px">
                 <Box
                     display="grid"
-                    gridTemplateColumns="repeat(12, 1fr)"
+                    gridTemplateColumns={isMobile ? "1fr" : "repeat(12, 1fr)"}
                     gridAutoRows="200px" // Increase the row height
                     gap="20px"
                 >
                     <Box
                         ref={statBoxRef1}
-                        gridColumn="span 3"
+                        gridColumn={isMobile ? "span 12" : "span 3"}
                         backgroundColor={colors.primary[400]}
                         display="flex"
                         alignItems="center"
@@ -45,16 +50,15 @@ const Dashboard = () => {
                         position="relative"
                     >
                         <StatBox
-                            title="12361"
-                            subtitle="Emails Sent"
-                            progress="0.75"
-                            increase="+14%"
-                            icon={<EmailIcon sx={{ color: colors.greenAccent[400], fontSize: "20px" }} />}
+                            title={`${summaryData.countries} Countries`}
+                            subtitle={`Total Outbreaks: ${summaryData.totalOutbreaks}`}
+                            progress={summaryData.totalOutbreaksToday / summaryData.totalOutbreaks}
+                            increase={`+${summaryData.increaseFromYesterday} since yesterday`}
                         />
                     </Box>
                     <Box
                         ref={statBoxRef2}
-                        gridColumn="span 3"
+                        gridColumn={isMobile ? "span 12" : "span 3"}
                         backgroundColor={colors.primary[400]}
                         display="flex"
                         alignItems="center"
@@ -62,22 +66,22 @@ const Dashboard = () => {
                         position="relative"
                     >
                         <StatBox
-                            title="12361"
-                            subtitle="Emails Sent"
-                            progress="0.75"
-                            increase="+14%"
+                            title={`${summaryData.countries} Countries`}
+                            subtitle={`Total Outbreaks: ${summaryData.totalOutbreaks}`}
+                            progress={summaryData.totalOutbreaksToday / summaryData.totalOutbreaks}
+                            increase={`+${summaryData.increaseFromYesterday} since yesterday`}
                             icon={<EmailIcon sx={{ color: colors.greenAccent[400], fontSize: "20px" }} />}
                         />
                     </Box>
                     <Box
                         ref={barChartRef}
-                        gridColumn="span 6" // Adjust the span if needed
+                        gridColumn={isMobile ? "span 12" : "span 6"} // Adjust the span if needed
                         backgroundColor={colors.primary[400]}
                         position="relative"
                     >
                         <Box
                             mt="5px"
-                            p="0 10px" // Adjust padding
+                            p="0 20px" // Adjust padding
                             display="flex"
                             justifyContent="space-between"
                             alignItems="center"
@@ -107,12 +111,12 @@ const Dashboard = () => {
             <Box mb="20px">
                 <Box
                     display="grid"
-                    gridTemplateColumns="repeat(12, 1fr)"
+                    gridTemplateColumns={isMobile ? "1fr" : "repeat(12, 1fr)"}
                     gap="20px"
                 >
                     <Box
                         ref={lineChartRef}
-                        gridColumn="span 8"
+                        gridColumn={isMobile ? "span 12" : "span 8"}
                         gridRow="span 2"
                         backgroundColor={colors.primary[400]}
                         position="relative"
@@ -144,14 +148,14 @@ const Dashboard = () => {
                     </Box>
                     <Box
                         ref={bumpChartRef}
-                        gridColumn="span 4"
+                        gridColumn={isMobile ? "span 12" : "span 4"}
                         gridRow="span 2"
                         backgroundColor={colors.primary[400]}
                         position="relative"
                     >
                         <Box
                             mt="15px"
-                            p="0 10px"
+                            p="0 20px"
                             display="flex"
                             justifyContent="space-between"
                             alignItems="center"
@@ -181,11 +185,11 @@ const Dashboard = () => {
             <Box mt="20px">
                 <Box
                     display="grid"
-                    gridTemplateColumns="repeat(12, 1fr)"
+                    gridTemplateColumns={isMobile ? "1fr" : "repeat(12, 1fr)"}
                     gap="20px"
                 >
                     <Box
-                        gridColumn="span 8"
+                        gridColumn={isMobile ? "span 12" : "span 8"}
                         gridRow="span 2"
                         backgroundColor={colors.primary[400]}
                         position="relative"
@@ -216,7 +220,7 @@ const Dashboard = () => {
                         </Box>
                     </Box>
                     <Box
-                        gridColumn="span 4"
+                        gridColumn={isMobile ? "span 12" : "span 4"}
                         gridRow="span 2"
                         backgroundColor={colors.primary[400]}
                         position="relative"

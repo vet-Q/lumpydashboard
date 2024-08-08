@@ -2,6 +2,136 @@
   "articles": [
     {
       "source": {
+        "id": null,
+        "name": "Naver News"
+      },
+      "author": null,
+      "title": "축산농가 가축질병 발생 당부",
+      "description": "지난해 전국적으로 107건 발생한 럼피스킨도 흡혈 곤충에 의한 전파로 알려져 있고, 지난해부터 백신접종을 하고 있지만 축사 주변의 방역 활동으로 매개체가 활동하지 않도록 관리하는 것이 중요하다는 게 시험소 측의... ",
+      "url": "https://www.ulsanpress.net/news/articleView.html?idxno=533438",
+      "urlToImage": "https://cdn.pixabay.com/photo/2023/01/26/13/58/cow-7746048_1280.jpg",
+      "publishedAt": "2024-08-08T11:30:00.000Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Naver News"
+      },
+      "author": null,
+      "title": "폭염속 열사병 등 축산농가 가축질병 발생 주의 당부",
+      "description": "지난해 전국적으로 107건 발생한 럼피스킨도 흡혈 곤충에 의한 전파로 알려져 있고, 지난해부터 백신접종을 하고 있으나 축사 주변의 방역 활동으로 매개체가 활동하지 않도록 관리하는 것이 중요하다. 도내 축산농가 소독... ",
+      "url": "https://n.news.naver.com/mnews/article/005/0001716680?sid=102",
+      "urlToImage": "https://cdn.pixabay.com/photo/2023/01/26/13/58/cow-7746048_1280.jpg",
+      "publishedAt": "2024-08-08T10:20:00.000Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Naver News"
+      },
+      "author": null,
+      "title": "&quot;민·관·학 지혜 모아 소 질병 근절하자&quot;",
+      "description": "이승호 한국낙농육우협회 회장은 &quot;지난해 구제역, 럼피스킨 등 질병 발생을 겪으면서 방역만큼은 절대 소홀해서는 안 된다고 생각한다&quot;라며 &quot;각 분야별 전문가들이 지혜를 모아 소 질병 근절에 앞장서야 할 때&quot;라고 말했고... ",
+      "url": "http://www.ikpnews.net/news/articleView.html?idxno=64611",
+      "urlToImage": "https://cdn.pixabay.com/photo/2023/01/26/13/58/cow-7746048_1280.jpg",
+      "publishedAt": "2024-08-08T10:18:00.000Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Naver News"
+      },
+      "author": null,
+      "title": "경남동물위생시험소, 폭염 가축질병 발생 주의 당부",
+      "description": "▲ 럼피스킨 백신 접종 모습 /경남도동물위생시험소 경남도동물위생시험소(소장 정창근)는 연일 고온 다습한 날씨가 지속됨에 따라 축산농가에 대해 가축질병 발생 주의를 당부했다. 최근 연일 30도를 웃도는 폭염이... ",
+      "url": "http://www.gndomin.com/news/articleView.html?idxno=402864",
+      "urlToImage": "https://cdn.pixabay.com/photo/2023/01/26/13/58/cow-7746048_1280.jpg",
+      "publishedAt": "2024-08-08T08:34:00.000Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Naver News"
+      },
+      "author": null,
+      "title": "경상남도동물위생시험소, 연일 폭염속 열사병 등 축산농가 가축질병 발생 주의...",
+      "description": "지난해 전국적으로 107건 발생한 럼피스킨도 흡혈 곤충에 의한 전파로 알려져 있고, 작년부터 백신접종을 하고 있으나 축사 주변의 방역 활동으로 매개체가 활동하지 않도록 관리하는 것이 중요하다.... ",
+      "url": "https://www.newsgn.com/news/articleView.html?idxno=432329",
+      "urlToImage": "https://cdn.pixabay.com/photo/2023/01/26/13/58/cow-7746048_1280.jpg",
+      "publishedAt": "2024-08-08T07:58:00.000Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Naver News"
+      },
+      "author": null,
+      "title": "경남도 동물위생시험소, 연일 폭염에 축산농가 가축질병 주의보",
+      "description": "지난 2023년 전국적으로 107건 발생한 럼피스킨도 흡혈 곤충에 의한 전파로 알려져 있고, 지난 2023년부터 백신접종을 하고 있으나 축사 주변의 방역 활동으로 매개체가 활동하지 않도록 관리하는 것이 중요하다.... ",
+      "url": "https://www.siminilbo.co.kr/news/newsview.php?ncode=1160291819425992",
+      "urlToImage": "https://cdn.pixabay.com/photo/2023/01/26/13/58/cow-7746048_1280.jpg",
+      "publishedAt": "2024-08-08T07:18:00.000Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Naver News"
+      },
+      "author": null,
+      "title": "경남동물위생시험소, 폭염 지속에 가축질병 발생 주의 당부",
+      "description": "지난해 전국적으로 107건 발생한 럼피스킨도 흡혈 곤충에 의한 전파로 알려져 있고, 작년부터 백신 접종을 하고 있으나 축사 주변 방역 활동으로 매개체가 활동하지 않도록 관리하는 것이 중요하다.... ",
+      "url": "https://n.news.naver.com/mnews/article/003/0012717118?sid=102",
+      "urlToImage": "https://cdn.pixabay.com/photo/2023/01/26/13/58/cow-7746048_1280.jpg",
+      "publishedAt": "2024-08-08T01:56:00.000Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Naver News"
+      },
+      "author": null,
+      "title": "인천시, 가축방역 최전선서 4년 연속 우수 지자체 자리매김",
+      "description": "평가 기준은 △창의성, 협업, 노력도 등 방역시책 차별성(정성평가) △아프리카돼지열병, 조류인플루엔자, 구제역, 럼피스킨 등 방역시책 추진 효율성(정량평가) 등 2개 분야 29개 항목이다. 이번 평가에서 인천시는 7개 특... ",
+      "url": "https://www.cstimes.com/news/articleView.html?idxno=605210",
+      "urlToImage": "https://cdn.pixabay.com/photo/2023/01/26/13/58/cow-7746048_1280.jpg",
+      "publishedAt": "2024-08-07T16:36:00.000Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Naver News"
+      },
+      "author": null,
+      "title": "김해시 전국체전 앞두고 소 럼피스킨병 방역",
+      "description": "김해시가 오는 10월 개최되는 전국체전 등 3대 메가이벤트를 찾는 관광객이 많을 것으로 예상됨에 따라 소 럼피스킨병(LSD) 차단을 위한 접종을 조기에 실시한다. 접종 일정은 8월 4개월령 송아지 사육 324농가... ",
+      "url": "http://www.gnnews.co.kr/news/articleView.html?idxno=559527",
+      "urlToImage": "https://cdn.pixabay.com/photo/2023/01/26/13/58/cow-7746048_1280.jpg",
+      "publishedAt": "2024-08-07T11:42:00.000Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Naver News"
+      },
+      "author": null,
+      "title": "인천시, 가축방역 최전선에서 4년 연속 우수 지자체 자리매김",
+      "description": "평가 기준은 ▲창의성, 협업, 노력도 등 방역시책 차별성(정성평가) ▲아프리카돼지열병, 조류인플루엔자, 구제역, 럼피스킨 등 방역시책 추진 효율성(정량평가) 등 2개 분야 29개 항목이다. 이번 평가에서 인천시는 7개 특... ",
+      "url": "https://www.kmaeil.com/news/articleView.html?idxno=467151",
+      "urlToImage": "https://cdn.pixabay.com/photo/2023/01/26/13/58/cow-7746048_1280.jpg",
+      "publishedAt": "2024-08-07T11:36:00.000Z",
+      "content": null
+    },
+    {
+      "source": {
         "id": "the-times-of-india",
         "name": "The Times of India"
       },
@@ -168,6 +298,32 @@
       "urlToImage": "https://cdn.pixabay.com/photo/2023/01/26/13/58/cow-7746048_1280.jpg",
       "publishedAt": "2024-06-05T06:12:00.000Z",
       "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Phys.Org"
+      },
+      "author": "Science X",
+      "title": "Shaping dairy farm vaccination decisions: Social pressure and vet influence",
+      "description": "A new study by Prof. Eyal Klement and Ph.D. Student Michal Morgenstern from the Koret School of Veterinary Medicine at the Hebrew University, in collaboration with Dr. Jaap Sok from the Business Economics Department at Wageningen University and Research, has …",
+      "url": "https://phys.org/news/2024-08-dairy-farm-vaccination-decisions-social.html",
+      "urlToImage": "https://scx2.b-cdn.net/gfx/news/hires/2024/dairy-farm.jpg",
+      "publishedAt": "2024-08-06T15:54:36Z",
+      "content": "A new study by Prof. Eyal Klement and Ph.D. Student Michal Morgenstern from the Koret School of Veterinary Medicine at the Hebrew University, in collaboration with Dr. Jaap Sok from the Business Econ… [+3962 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Plos.org"
+      },
+      "author": "Sheikh Muhammad Saqib, Muhammad Iqbal, Mohamed Tahar Ben Othman, Tariq Shahazad, Yazeed Yasin Ghadi, Sulaiman Al-Amro, Tehseen Mazhar",
+      "title": "Lumpy skin disease diagnosis in cattle: A deep learning approach optimized with RMSProp and MobileNetV2",
+      "description": "Lumpy skin disease (LSD) is a critical problem for cattle populations, affecting both individual cows and the entire herd. Given cattle’s critical role in meeting human needs, effective management of this disease is essential to prevent significant losses. Th…",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0302862",
+      "urlToImage": "https://journals.plos.org/plosone/article/figure/image?id=10.1371/journal.pone.0302862.g006&size=inline",
+      "publishedAt": "2024-08-05T14:00:00Z",
+      "content": "Abstract\r\nLumpy skin disease (LSD) is a critical problem for cattle populations, affecting both individual cows and the entire herd. Given cattles critical role in meeting human needs, effective mana… [+36865 chars]"
     }
   ]
 }

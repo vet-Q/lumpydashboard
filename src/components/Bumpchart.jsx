@@ -1,44 +1,59 @@
-import { ResponsiveBump } from '@nivo/bump'
+import { ResponsiveBump } from '@nivo/bump';
 import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import { preparedData as data } from "../data/preparedData";
 
-const BumpChart = () =>{
+const BumpChart = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+
+    const CustomTooltip = ({ point }) => (
+        <div
+            style={{
+                padding: '12px 16px',
+                background: colors.blueAccent[200],
+                color: colors.grey[700],
+                opacity: 1,
+                borderRadius: '2px',
+                boxShadow: '0 3px 6px rgba(0, 0, 0, 0.1)',
+            }}
+        >
+            <strong>{point.serie.id}</strong>: {point.data.yFormatted}
+        </div>
+    );
 
     return (
         <ResponsiveBump
             data={data.bumpChartData}
             theme={{
-                axis:{
-                    domain:{
-                        line:{
-                            stroke:colors.grey[100],
+                axis: {
+                    domain: {
+                        line: {
+                            stroke: colors.grey[100],
                         }
                     },
-                    legend:{
-                        text:{
-                            fill:colors.grey[100]
+                    legend: {
+                        text: {
+                            fill: colors.grey[100]
                         }
                     },
-                    ticks:{
-                        line:{
+                    ticks: {
+                        line: {
                             stroke: colors.grey[100],
                             strokeWidth: 1,
                         },
-                        text:{
-                            fill:colors.grey[100],
+                        text: {
+                            fill: colors.grey[100],
                         }
                     }
                 },
-                legend:{
-                    text:{
-                        fill:colors.grey[100],
+                legend: {
+                    text: {
+                        fill: colors.grey[100],
                     }
                 }
-            }
-            }
+            }}
+            tooltip={CustomTooltip}
             colors={{ scheme: 'spectral' }}
             lineWidth={2}
             activeLineWidth={6}
@@ -73,7 +88,7 @@ const BumpChart = () =>{
             margin={{ top: 40, right: 100, bottom: 40, left: 60 }}
             axisRight={null}
         />
-    )
+    );
 }
 
-export default BumpChart
+export default BumpChart;

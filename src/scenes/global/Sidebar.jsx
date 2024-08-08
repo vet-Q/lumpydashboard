@@ -113,7 +113,7 @@ const Sidebar = () => {
                             color={colors.grey[300]}
                             sx={{ m: "15px 0 5px 20px" }}
                         >
-                            Related resources
+                            Resources
                         </Typography>
                         <Item
                             title="Research Institute"
@@ -200,7 +200,7 @@ const Sidebar = () => {
                             color={colors.grey[300]}
                             sx={{ m: "15px 0 5px 20px" }}
                         >
-                            etc
+                            ...
                         </Typography>
                         <Item
                             title="WhoamI"

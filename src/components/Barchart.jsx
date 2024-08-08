@@ -7,9 +7,26 @@ const Barchart = ({ isDashboard = false }) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
+    const CustomTooltip = ({ id, value }) => (
+        <div
+            style={{
+                padding: '12px 16px',
+                background: colors.blueAccent[200],
+                color: colors.grey[700],
+                opacity: 1,
+                borderRadius: '2px',
+                boxShadow: '0 3px 6px rgba(0, 0, 0, 0.1)',
+            }}
+        >
+            <strong>{id}</strong>: {value}
+        </div>
+    );
+
+
     return (
         <ResponsiveBar
             data={data.barChartData}
+            tooltip={CustomTooltip} //커스텀 툴팁을 정의하고, 이걸 가져와서 여기서 보여주는 형태로 구성
             theme={{
                 axis: {
                     domain: {
@@ -40,7 +57,7 @@ const Barchart = ({ isDashboard = false }) => {
             }}
             keys={["Africa", "Asia", "Europe"]}
             indexBy="year"
-            margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+            margin={{ top: 10, right: 130, bottom: 50, left: 60 }}
             padding={0.3}
             valueScale={{ type: "linear" }}
             indexScale={{ type: "band", round: true }}
@@ -55,7 +72,7 @@ const Barchart = ({ isDashboard = false }) => {
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: "Year",
+                // legend: "Year",
                 legendPosition: "middle",
                 legendOffset: 32,
             }}
@@ -88,14 +105,6 @@ const Barchart = ({ isDashboard = false }) => {
                     itemDirection: "left-to-right",
                     itemOpacity: 0.85,
                     symbolSize: 20,
-                    effects: [
-                        {
-                            on: "hover",
-                            style: {
-                                itemOpacity: 1,
-                            },
-                        },
-                    ],
                 },
             ]}
             role="application"

@@ -4,7 +4,28 @@ const path = require('path');
 
 const DATA_FILE_PATH = path.join(__dirname, '../public/data/news.json');
 
+const PASSWORD_FILE_PATH = path.join(__dirname, '../public/data/naverPassword.json');
+// 기본 이미지 파일 경로를 설정합니다.
+
+// 패스워드 데이터를 로드하는 함수입니다.
+function loadPasswordData() {
+    if (!fs.existsSync(PASSWORD_FILE_PATH)) {
+        throw new Error('Password file not found'); // 파일이 없으면 에러를 던집니다.
+    }
+    const data = fs.readFileSync(PASSWORD_FILE_PATH); // 파일 내용을 읽어옵니다.
+    try {
+        return JSON.parse(data); // 파일 내용을 JSON으로 파싱하여 반환합니다.
+    } catch (error) {
+        console.error('Error parsing password JSON:', error); // JSON 파싱 중 에러가 발생하면 로그를 출력합니다.
+        throw error; // 에러를 던집니다.
+    }
+}
+
 async function searchNews(q) {
+
+    const passwordData = loadPasswordData(); // 패스워드 데이터를 로드합니다.
+    const clientSecret = passwordData.NewsAPI; // 클라이언트 시크릿을 가져옵니다.
+
     const today = new Date();
     const oneMonthAgo = new Date(today);
     oneMonthAgo.setMonth(today.getMonth() - 1);
@@ -15,7 +36,7 @@ async function searchNews(q) {
     const toDate = formatDate(today);
 
     q = encodeURIComponent(q);
-    const response = await fetch(`https://newsapi.org/v2/everything?q=${q}&from=${fromDate}&to=${toDate}&sortBy=publishedAt&apiKey=`);
+    const response = await fetch(`https://newsapi.org/v2/everything?q=${q}&from=${fromDate}&to=${toDate}&sortBy=publishedAt&apiKey=${clientSecret}`);
 
     if (response.status === 429) {
         console.error(`Error fetching news: ${response.status} ${response.statusText}`);
@@ -72,7 +93,7 @@ async function updateNewsData() {
     const existingUrls = new Set(existingData.articles.map(article => article.url));
     const filteredNewArticles = newArticles.filter(article => !existingUrls.has(article.url));
 
-    const updatedData = { articles: [...existingData.articles, ...filteredNewArticles] };
+    const updatedData = { articles: [...filteredNewArticles, ...existingData.articles, ] };
     saveData(updatedData);
     console.log('Data updated in news.json');
 }

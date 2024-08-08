@@ -1,4 +1,11 @@
 export const preparedData = {
+  "summaryData": {
+    "countries": 50,
+    "totalOutbreaks": 4976,
+    "increaseFromYesterday": 0,
+    "totalOutbreaksYesterday": 4976,
+    "totalOutbreaksToday": 4976
+  },
   "lineChartData": [
     {
       "id": "Thailand",

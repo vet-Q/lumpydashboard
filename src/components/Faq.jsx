@@ -21,20 +21,35 @@ const FaqPage = () => {
                 </CardContent>
                 <CardActions>
                     <Box
-                        width="20%" // 너비 조정
+                        width="20%"
                         m="0 auto"
                         p="5px"
                         display="flex"
                         justifyContent="center"
-                        backgroundColor={colors.greenAccent[600]}
+                        bgcolor="#4caf50"
                         borderRadius="4px"
                     >
-                        Learn More
+                        <a
+                            href="/pdf/LumpySkinDisease.pdf" // PDF 파일 경로
+                            target="_blank" // 새 탭에서 열기
+                            rel="noopener noreferrer"
+                            style={{
+                                textDecoration: 'none',
+                                color: 'white',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                width: '100%',
+                                height: '100%',
+                            }}
+                        >
+                            Learn More
+                        </a>
                     </Box>
                 </CardActions>
             </Card>
 
-            <Card sx={{ backgroundColor: colors.primary[400], mb: 2 }}>
+            <Card sx={{backgroundColor: colors.primary[400], mb: 2}}>
                 <CardContent>
                     <Typography variant="h3" color={colors.grey[100]}>
                         How is LSD transmitted?
@@ -45,15 +60,30 @@ const FaqPage = () => {
                 </CardContent>
                 <CardActions>
                     <Box
-                        width="20%" // 너비 조정
+                        width="20%"
                         m="0 auto"
                         p="5px"
                         display="flex"
                         justifyContent="center"
-                        backgroundColor={colors.greenAccent[600]}
+                        bgcolor="#4caf50"
                         borderRadius="4px"
                     >
-                        Learn More
+                        <a
+                            href="/pdf/transmission.pdf" // PDF 파일 경로
+                            target="_blank" // 새 탭에서 열기
+                            rel="noopener noreferrer"
+                            style={{
+                                textDecoration: 'none',
+                                color: 'white',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                width: '100%',
+                                height: '100%',
+                            }}
+                        >
+                            Learn More
+                        </a>
                     </Box>
                 </CardActions>
             </Card>
@@ -69,15 +99,30 @@ const FaqPage = () => {
                 </CardContent>
                 <CardActions>
                     <Box
-                        width="20%" // 너비 조정
+                        width="20%"
                         m="0 auto"
                         p="5px"
                         display="flex"
                         justifyContent="center"
-                        backgroundColor={colors.greenAccent[600]}
+                        bgcolor="#4caf50"
                         borderRadius="4px"
                     >
-                        Learn More
+                        <a
+                            href="/pdf/symptoms.pdf" // PDF 파일 경로
+                            target="_blank" // 새 탭에서 열기
+                            rel="noopener noreferrer"
+                            style={{
+                                textDecoration: 'none',
+                                color: 'white',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                width: '100%',
+                                height: '100%',
+                            }}
+                        >
+                            Learn More
+                        </a>
                     </Box>
                 </CardActions>
             </Card>
@@ -85,23 +130,38 @@ const FaqPage = () => {
             <Card sx={{ backgroundColor: colors.primary[400], mb: 2 }}>
                 <CardContent>
                     <Typography variant="h3" color={colors.grey[100]}>
-                        How can LSD be prevented?
+                        Recent Status and Diagnostic Methods of Lumpy Skin Disease
                     </Typography>
                     <Typography variant="h4" color={colors.grey[300]} m="20px">
-                        Prevention of LSD involves the use of vaccines and controlling the population of blood-feeding insects. It is also important to quarantine infected animals and implement strict biosecurity measures on farms.
+                        LSD is now recognized as a transboundary disease, with outbreaks reported across various regions including Africa, the Middle East, and most recently Asia and parts of Europe.
                     </Typography>
                 </CardContent>
                 <CardActions>
                     <Box
-                        width="20%" // 너비 조정
+                        width="20%"
                         m="0 auto"
                         p="5px"
                         display="flex"
                         justifyContent="center"
-                        backgroundColor={colors.greenAccent[600]}
+                        bgcolor="#4caf50"
                         borderRadius="4px"
                     >
-                        Learn More
+                        <a
+                            href="/pdf/Diagnosis.pdf" // PDF 파일 경로
+                            target="_blank" // 새 탭에서 열기
+                            rel="noopener noreferrer"
+                            style={{
+                                textDecoration: 'none',
+                                color: 'white',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                width: '100%',
+                                height: '100%',
+                            }}
+                        >
+                            Learn More
+                        </a>
                     </Box>
                 </CardActions>
             </Card>

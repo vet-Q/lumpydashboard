@@ -100,7 +100,7 @@ function saveData(data) {
 async function updateNewsData() {
     let newArticles = [];
     try {
-        newArticles = await searchNewsNaver('lumpy skin disease'); // 네이버 뉴스 API를 호출하여 새로운 기사를 가져옵니다.
+        newArticles = await searchNewsNaver('럼피스킨'); // 네이버 뉴스 API를 호출하여 새로운 기사를 가져옵니다.
     } catch (error) {
         console.error('Error fetching new articles:', error); // API 호출 중 에러가 발생하면 로그를 출력합니다.
     }
@@ -124,7 +124,7 @@ async function updateNewsData() {
     const existingTitles = new Set(existingData.articles.map(article => article.title)); // 기존 기사 제목을 집합으로 만듭니다.
     const filteredNewArticles = newArticles.filter(article => !existingUrls.has(article.url) && !existingTitles.has(article.title)); // 새로운 기사 중 중복되지 않은 기사를 필터링합니다.
 
-    const updatedData = { articles: [...existingData.articles, ...filteredNewArticles] }; // 기존 기사와 새로운 기사를 합칩니다.
+    const updatedData = { articles: [...filteredNewArticles, ...existingData.articles] }; // 기존 기사와 새로운 기사를 합칩니다.
     saveData(updatedData); // 업데이트된 데이터를 파일에 저장합니다.
     console.log('Data updated in news.json');
 }
